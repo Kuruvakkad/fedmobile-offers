@@ -29,29 +29,21 @@
         <div id="offersContainer" class="offers-container">
             <!-- Cards will be injected here via JS -->
         </div>
-
-        <!-- Empty State Container -->
-        <div id="emptyState" class="empty-state hidden">
-            <div class="empty-icon">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg>
-            </div>
-            <h2>No Offers Currently</h2>
-            <p>You don't have any pre-approved offers at the moment. We will notify you when new offers are available for you.</p>
-            <button class="btn btn-outline" onclick="alert('Navigating to home...')">Back to Home</button>
-        </div>
     </main>
 
-    <!-- SSO Redirection Modal -->
-    <div id="ssoModal" class="modal-overlay hidden">
+    <!-- Dynamic Offer Modal -->
+    <div id="offerModal" class="modal-overlay hidden">
         <div class="modal-content">
-            <div class="modal-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+            <div class="modal-icon" id="modalIcon">
+                <!-- Icon injected by JS -->
             </div>
-            <h3>Redirecting to Loan Portal</h3>
-            <p>You are about to be securely redirected to the Federal Bank Loan Portal to proceed with your <span id="modalOfferName" class="font-semibold">Offer</span>.</p>
+            <h3 id="modalTitle">Offer Title</h3>
+            <div id="modalBody" class="modal-body-content">
+                <!-- Text and details injected by JS -->
+            </div>
             <div class="modal-actions">
-                <button id="modalCancelBtn" class="btn btn-secondary">Cancel</button>
-                <button id="modalConfirmBtn" class="btn btn-primary">Confirm</button>
+                <button id="modalCancelBtn" class="btn btn-secondary">Close</button>
+                <button id="modalCtaBtn" class="btn btn-primary">Apply Now</button>
             </div>
         </div>
     </div>
