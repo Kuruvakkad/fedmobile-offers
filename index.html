@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FedMobile - Pre-Approved Offers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="back-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </div>
+        <h1>Pre-Approved Offers</h1>
+        <div class="header-action">
+            <!-- Debug Toggle -->
+            <label class="switch">
+              <input type="checkbox" id="debugToggle" checked>
+              <span class="slider round"></span>
+            </label>
+        </div>
+    </header>
+
+    <main class="app-content">
+        <!-- Offers Container -->
+        <div id="offersContainer" class="offers-container">
+            <!-- Cards will be injected here via JS -->
+        </div>
+
+        <!-- Empty State Container -->
+        <div id="emptyState" class="empty-state hidden">
+            <div class="empty-icon">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-blue"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg>
+            </div>
+            <h2>No Offers Currently</h2>
+            <p>You don't have any pre-approved offers at the moment. We will notify you when new offers are available for you.</p>
+            <button class="btn btn-outline" onclick="alert('Navigating to home...')">Back to Home</button>
+        </div>
+    </main>
+
+    <!-- SSO Redirection Modal -->
+    <div id="ssoModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14L21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+            </div>
+            <h3>Redirecting to Loan Portal</h3>
+            <p>You are about to be securely redirected to the Federal Bank Loan Portal to proceed with your <span id="modalOfferName" class="font-semibold">Offer</span>.</p>
+            <div class="modal-actions">
+                <button id="modalCancelBtn" class="btn btn-secondary">Cancel</button>
+                <button id="modalConfirmBtn" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <span id="toastMsg">Action logged</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
